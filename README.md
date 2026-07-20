@@ -18,7 +18,7 @@ Python | SQL | Pandas | Machine Learning | Azure | React | FastAPI
 * AI-powered systems & automation
 * Scalable SaaS product development
 
-📈 Solved 130+ problems on LeetCode
+📈 Solved 400+ problems on LeetCode
 🌱 Always learning, building, and improving
 
 📫 Let's connect:
