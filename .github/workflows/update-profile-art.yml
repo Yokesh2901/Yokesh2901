@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dependencies
-        run: pip install -r scripts/requirements.txt
+        run: pip install requests==2.32.3 beautifulsoup4==4.12.3
       - name: Fetch Yokesh's public GitHub contributions
         env:
           GH_PROFILE_USER: Yokesh2901
