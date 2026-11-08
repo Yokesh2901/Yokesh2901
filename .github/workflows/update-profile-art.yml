@@ -1,28 +1,37 @@
-name: Update contribution heatmap
+name: Update profile art
 
 on:
   schedule:
     - cron: "17 6 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/update-profile-art.yml"
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  profile-art:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install requests beautifulsoup4
-      - name: Fetch public contribution calendar
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+      - name: Fetch Yokesh's public GitHub contributions
         env:
-          GITHUB_USERNAME: Yokesh2901
+          GH_PROFILE_USER: Yokesh2901
         run: python scripts/fetch_contributions.py
-      - run: python scripts/render_heatmap_svg.py
+      - name: Render animated contribution heatmap
+        run: python scripts/render_heatmap_svg.py
+      - name: Render animated stats card
+        run: python scripts/render_stats_svg.py
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: refresh contribution heatmap [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg"
+          commit_message: "chore: refresh contribution graph [skip ci]"
+          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg"
