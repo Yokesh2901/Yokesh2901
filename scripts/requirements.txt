@@ -1,0 +1,1 @@
+requests==2.32.3\nbeautifulsoup4==4.12.3\nPillow>=10.0.0\nnumpy>=1.26.0\nopencv-python-headless>=4.9.0\n
