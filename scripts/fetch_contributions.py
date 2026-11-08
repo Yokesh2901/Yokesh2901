@@ -11,14 +11,17 @@ response = requests.get(url, headers={"User-Agent": "profile-art-generator"}, ti
 response.raise_for_status()
 soup = BeautifulSoup(response.text, "html.parser")
 days = []
-for cell in soup.select("td[data-date]"):
+for cell in soup.select("[data-date][data-count]"):
     try:
         day = date.fromisoformat(cell["data-date"])
         count = int(cell.get("data-count", "0"))
     except (KeyError, ValueError):
         continue
-    classes = " ".join(cell.get("class", []))
-    level = next((int(c[1:]) for c in classes.split() if c.startswith("L") and c[1:].isdigit()), 0)
+    raw_level = cell.get("data-level", "0")
+    try:
+        level = int(raw_level)
+    except ValueError:
+        level = 0
     if count and level == 0:
         level = min(4, 1 + (count >= 2) + (count >= 5) + (count >= 10))
     days.append({"date": day.isoformat(), "count": count, "level": level})
