@@ -52,7 +52,7 @@ def main():
         parts.append(f'<text class="ascii" x="24" y="{start_y+i*line_height}" xml:space="preserve" style="animation-delay:{delay:.3f}s">{escape(line)}</text>')
     parts.append(f'<rect class="cursor" x="{24+COLS*4.8:.1f}" y="{start_y+(rows-1)*line_height-7}" width="6" height="9"/>')
     parts.append(f'<text x="22" y="{height-12}" fill="#39d353" font-family="monospace" font-size="11">YOKESH S. // ML DATA ANALYST · AI BUILDER</text></svg>')
-    OUTPUT.write_text("\\n".join(parts), encoding="utf-8")
+    OUTPUT.write_text("\n".join(parts), encoding="utf-8")
     print(f"Wrote {OUTPUT}")
 
 if __name__ == "__main__":
