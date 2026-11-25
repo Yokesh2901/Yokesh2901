@@ -1,22 +1,22 @@
 {
   "username": "Yokesh2901",
-  "generated_at": "2026-11-24T17:48:05.934835+00:00",
+  "generated_at": "2026-11-25T17:15:30.456599+00:00",
   "range": {
     "start": "2025-11-23",
+    "end": "2026-11-25"
+  },
+  "total_contributions": 108,
+  "active_days": 32,
+  "avg_per_active_day": 3.4,
+  "current_streak": {
+    "length": 17,
+    "start": "2026-11-08",
     "end": "2026-11-24"
   },
-  "total_contributions": 107,
-  "active_days": 31,
-  "avg_per_active_day": 3.5,
-  "current_streak": {
-    "length": 16,
-    "start": "2026-11-08",
-    "end": "2026-11-23"
-  },
   "longest_streak": {
-    "length": 16,
+    "length": 17,
     "start": "2026-11-08",
-    "end": "2026-11-23"
+    "end": "2026-11-24"
   },
   "best_day": {
     "date": "2026-11-09",
@@ -73,7 +73,7 @@
     },
     {
       "month": "2026-11",
-      "total": 51
+      "total": 52
     }
   ],
   "days": [
@@ -1909,6 +1909,11 @@
     },
     {
       "date": "2026-11-24",
+      "count": 1,
+      "level": 1
+    },
+    {
+      "date": "2026-11-25",
       "count": 0,
       "level": 0
     }
